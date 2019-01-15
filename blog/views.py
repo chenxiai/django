@@ -13,5 +13,5 @@ def index(request):
 
     # 1：调用业务逻辑类
     # 2：调用数据访问层，由于django采用orm映射，因此直接操作类即可
-    article = Article.objects.get(id=1)
-    return render(request, "index.html", {'article': article})
+    articles = Article.objects.all()
+    return render(request, "index.html", {'articles': articles})
