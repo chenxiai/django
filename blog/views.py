@@ -15,3 +15,13 @@ def index(request):
     # 2：调用数据访问层，由于django采用orm映射，因此直接操作类即可
     articles = Article.objects.all()
     return render(request, "index.html", {'articles': articles})
+
+
+def delete(request,article_id):
+    # 通过ID获取对象,然后删除
+    try:
+        Article.objects.get(id=article_id).delete()
+    except Exception:
+        print('此处是处理异常的代码')
+    articles = Article.objects.all()
+    return render(request, "index.html", {'articles': articles})

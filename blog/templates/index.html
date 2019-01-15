@@ -20,7 +20,7 @@
                 <td>{{ forloop.counter }}</td>
                 <td>{{ article.title }}</td>
                 <td>{{ article.content }}</td>
-                <td>更新 | 删除</td>
+                <td>更新 | <a href="/delete/{{article.id}}"> 删除 </a></td>
             </tr>
         {% endfor %}
     </table>

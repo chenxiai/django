@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # 指定当前url地址绑定到view模块的哪个函数
     path('index/', bv.index),
+    path("delete/<int:article_id>",bv.delete)
 ]
